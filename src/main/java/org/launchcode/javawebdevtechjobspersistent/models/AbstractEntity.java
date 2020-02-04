@@ -1,14 +1,24 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
-
+@MappedSuperclass
 public abstract class AbstractEntity {
 
+
+    @Id
+    @GeneratedValue
     private int id;
 
     private String name;
 
+    @NotNull(message = "category is required")
+    @Max(100)
     public int getId() {
         return id;
     }
