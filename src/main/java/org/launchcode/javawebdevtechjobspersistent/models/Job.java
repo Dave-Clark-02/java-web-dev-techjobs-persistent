@@ -10,7 +10,7 @@ import java.util.List;
 public class Job extends AbstractEntity{
 
     @ManyToOne
-    @NotNull(message = "Employer is required, please select an employer.")
+    @NotNull(message = "Employer is a required field, please select an employer.")
     private Employer employer;
 
     @ManyToMany

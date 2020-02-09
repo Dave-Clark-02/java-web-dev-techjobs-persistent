@@ -2,7 +2,7 @@ package org.launchcode.javawebdevtechjobspersistent.models;
 
 import java.util.ArrayList;
 
-// This is a change made in sandbox.
+
 
 /**
  * Created by LaunchCode
