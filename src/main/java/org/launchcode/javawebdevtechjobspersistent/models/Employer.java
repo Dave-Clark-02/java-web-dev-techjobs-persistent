@@ -3,27 +3,27 @@ package org.launchcode.javawebdevtechjobspersistent.models;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Employer extends AbstractEntity {
 
+    @NotBlank(message = "Please provide Job location.")
+    @Size(min = 3,max = 255, message = "Location must be only 10-255 characters.  Please try again.")
+    private String location;
 
-  @OneToMany
-  @JoinColumn
-   private List<Job> jobs= new ArrayList<>();
+    @OneToMany
+    @JoinColumn
+    private final List<Job> jobs = new ArrayList<>();
 
-    @Valid
-    public String location;
-
-    {
+    public Employer(String location){
+        this.location = location;
     }
 
-    public Employer() {
-
-    }
+    public Employer() {}
 
     public String getLocation() {
         return location;

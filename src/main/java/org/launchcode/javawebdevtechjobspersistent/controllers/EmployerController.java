@@ -38,9 +38,8 @@ public class EmployerController {
         if (errors.hasErrors()) {
             return "employers/add";
         }
+
         employerRepository.save(newEmployer);
-
-
         return "redirect:";
     }
 
@@ -55,9 +54,5 @@ public class EmployerController {
         } else {
             return "redirect:../";
         }
-
-//        @PostMapping Mapping("employers/add")
-//                public String ProcessViewEmployer(@ModelAttribute @Valid )
     }
-
 }
